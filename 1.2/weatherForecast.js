@@ -76,8 +76,17 @@ export class WeatherForecast {
         }
     }
 
-    add(data){
-        this.data.concat(data)
+    add(data2){
+	for (let i = 0; i < data2.length; i++)
+        {
+            if ( WeatherData.prototype.isPrototypeOf(data2[i]))
+            {
+                this.data.push(data2[i])
+            }
+            else{
+                console.log('This is not a weather data? But lets continue')
+            }
+        }
     }
 
     getFilteredPredictions(){
